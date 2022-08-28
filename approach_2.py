@@ -13,25 +13,25 @@ wb = openpyxl.load_workbook("test.xlsx",data_only=True)
 ws = wb.active
 a=0
 basic_salary=0
-# def basic_salary():
-#     for x in range(9,20):
-#         if ws['A'+str(x)].value == 'basic_salary':
-#             ws['B'+str(x)].value=ws['B'+str(a)].value*0.5
-#             ws['C'+str(x)].value=(ws['B'+str(a)].value*0.5)/12
-#             wb.save("test.xlsx")
-#             basic_salary=ws['C'+str(x)].value
-#             print(basic_salary)
-ws['B4']= "=B2*50%"
-# def hra():
-#     for x in range(9,20):
-#         if ws['A'+str(x)].value == 'HRA':
-#             ws['B'+str(x)].value=ws['B'+str(x-1)].value*0.5
-#             ws['C'+str(x)].value=(ws['B'+str(x)].value)/12
-#             wb.save("test.xlsx")
-#             monthly_hra=ws['C'+str(x)].value
-#             annual_hra=ws['B'+str(x)].value
-#             print("annual hra=",annual_hra)
-#             print("monthly hra=",monthly_hra)
+def basic_salary():
+    for x in range(9,20):
+        if ws['A'+str(x)].value == 'basic_salary':
+            ws['B'+str(x)].value=ws['B'+str(a)].value*0.5
+            ws['C'+str(x)].value=(ws['B'+str(a)].value*0.5)/12
+            wb.save("test.xlsx")
+            basic_salary=ws['C'+str(x)].value
+            print(basic_salary)
+
+def hra():
+    for x in range(9,20):
+        if ws['A'+str(x)].value == 'HRA':
+            ws['B'+str(x)].value=ws['B'+str(x-1)].value*0.5
+            ws['C'+str(x)].value=(ws['B'+str(x)].value)/12
+            wb.save("test.xlsx")
+            monthly_hra=ws['C'+str(x)].value
+            annual_hra=ws['B'+str(x)].value
+            print("annual hra=",annual_hra)
+            print("monthly hra=",monthly_hra)
 
 
 base_salary=(int(input("enter ctc")))
