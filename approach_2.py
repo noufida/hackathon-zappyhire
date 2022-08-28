@@ -80,6 +80,18 @@ def sp_allowances():
             print("monthly allowances=",monthly_allowances)
 
 
+#calculating monthly base salary based on ctc entered
+def monthly_baseSalary():
+    for x in range(9,20):
+        if ws['A'+str(x)].value == 'base_salary':
+            for cell in range(9,14):
+                ws['C'+str(x)].value+=ws['C'+str(cell)].value
+                        
+            wb.save("test.xlsx")
+            monthly_base_salary=ws['C'+str(x)].value
+            print("monthly base salary=",monthly_base_salary)
+
+
 base_salary=(int(input("enter ctc")))
 #looping for finding column corresponds to enterd ctc
 for x in range(9,20):
@@ -95,3 +107,4 @@ hra()
 employer_esi()
 pf()
 sp_allowances()
+monthly_baseSalary()
